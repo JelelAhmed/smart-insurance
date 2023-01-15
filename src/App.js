@@ -7,6 +7,7 @@ import Home from './routes/home/home.component';
 import Contact from './routes/contact/contact.component';
 
 import './App.scss';
+import Products from './routes/products/products.component';
 
 
 const App = () => {
@@ -15,8 +16,8 @@ const App = () => {
 			<Route path='/' element={<Navigation />}>
 			  <Route index element={<Home />} />
 				<Route path='contact' element={<Contact />} />
-				{/* <Route path='auth' element={<Authentication />} />
-				<Route path='checkout' element={<Checkout />} /> */}
+				<Route path='auth' element={<Products />} />
+				{/* <Route path='checkout' element={<Checkout />} /> */}
 			</Route>
 		</Routes>
   );

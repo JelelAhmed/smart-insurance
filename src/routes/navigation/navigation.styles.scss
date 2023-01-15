@@ -6,8 +6,9 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	background-color: white;
-	box-shadow: 0 1.5rem 4rem rgba($color-black, .11);;
+	background: #F3F4F7;
+	background-position: center;
+	box-shadow: 0 1.5rem 4rem rgba($color-black, .2);;
 
 	&-logo{
 		justify-self: flex-start;
