@@ -1,0 +1,54 @@
+@import './variables.module.scss';
+
+$color-base: #eee;
+$color-secondary: #FFE7E7;
+// Global reset 
+
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+
+// 10px/16px = 62.5% // Overall Font size == 1rem
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+
+	@media only screen and(max-width: $bp-largest) {
+		font-size: 50%;
+	}
+}
+
+
+body {
+	font-family: "Lato", sans-serif;
+	line-height: 1.7;
+	background-color: $color-base;
+	font-weight: 400;
+	color: #777;
+}
+
+.container {
+	font-size: 1.6rem;
+
+	background-color: $color-base;
+
+	display: grid;
+	grid-template-rows: 95vh repeat(5, min-content);
+	grid-template-columns: [sidebar-start] 20rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, 
+	[col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+	@media only screen and(max-width: $bp-large) {
+		grid-template-rows: min-content 95vh repeat(5, min-content);
+		grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, 
+		[col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+	}
+
+	@media only screen and(max-width: $bp-small) {
+		grid-template-rows: min-content 100vh;	
+	}
+}

@@ -1,0 +1,24 @@
+@import '../../../styles/variables.module.scss';
+
+.nav {
+	// height: inherit;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	background-color: white;
+	box-shadow: 0 1.5rem 4rem rgba($color-black, .11);;
+
+	&-logo{
+		justify-self: flex-start;
+	}
+
+
+	&-items {
+		// margin-top: 0;
+		// padding: 0px;
+		// list-style-type: none;
+		display: flex;
+		flex-direction: row;
+	}
+}

@@ -1,0 +1,71 @@
+@import '../../../styles/variables.module.scss';
+
+.item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	&:not(:last-child) {
+		margin-bottom: 0rem;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: $color-primary-2;
+		transform: scaleY(0);
+		transition: transform .2s, 
+								width .4s cubic-bezier(1,0,0,1) .2s,
+								background-color .1s;
+
+		@media only screen and(max-width: $bp-large) {
+			
+			width: 100%;
+			transform: scaleX(0);
+		}
+	}
+
+	&-active::before,
+	&:hover::before {
+		transform: scale(1);
+		width: 100%;
+	}
+
+	&-active::before,
+	&:active::before {
+		background-color: $color-primary-4;
+	}
+
+	a,
+	&-link:link,
+	&-link:visited {
+			color: #373f49;
+			font-family: 'rancho';
+			font-size: 1.1rem;
+			cursor: pointer;
+			font-weight: bolder;
+			text-decoration: none;
+			text-transform: uppercase;
+			// border-bottom: 2px solid rgba($color-grey-dark-2, 0.2);
+			display: flex;
+			align-items: center;
+			padding: 1rem 1.2rem;
+			position: relative;
+			z-index: 100;
+
+			@media only screen and(max-width: $bp-large) {
+				border-bottom: unset;
+				margin-right: 1rem;
+			}
+
+			@media only screen and(max-width: $bp-medium-sidebar) {
+				margin-right: 0rem;
+			}
+		}
+	}
+
+
