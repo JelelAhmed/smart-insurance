@@ -10,7 +10,7 @@ import './product-card.styles.scss';
 
 
 
-const ProductCard = ({title, price, description}) => {
+const ProductCard = ({name, price, description}) => {
 
 	
 	const PaystackCheckout = () => {
@@ -20,7 +20,7 @@ const ProductCard = ({title, price, description}) => {
 	return (
 		<div className="plan-card">
 			<div className="plan-detail">
-				<div className="plan-title">{title}</div>
+				<div className="plan-title">{name}</div>
 				<div className="plan-price">#{price} / Annum</div>
 				<span className="plan-empty"></span>
 			</div>

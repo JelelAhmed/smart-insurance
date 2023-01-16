@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "BASIC",
+    "price": 10,
+    "description": "Our starter package that gets YOU going"
+
+  },
+  {
+    "id": 2,
+    "name": "STANDARD",
+    "price": 20,
+		"description": "Best package for the family up to four"
+  },
+  {
+    "id": 3,
+    "name": "PREMIUN",
+    "price": 30,
+		"description": "Extended family? you'll be spoit for choice"
+  }
+]

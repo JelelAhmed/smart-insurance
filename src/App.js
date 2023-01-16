@@ -8,7 +8,7 @@ import Contact from './routes/contact/contact.component';
 import Checkout from './routes/checkout/checkout.component';
 
 import './App.scss';
-import Products from './routes/products/products.component';
+import Plans from './routes/plans/plans.component';
 
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
 			<Route path='/' element={<Navigation />}>
 			  <Route index element={<Home />} />
 				<Route path='contact' element={<Contact />} />
-				<Route path='products' element={<Products />} />
+				<Route path='products' element={<Plans />} />
 				<Route path='checkout' element={<Checkout />} />
 			</Route>
 		</Routes>
