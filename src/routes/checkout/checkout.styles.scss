@@ -1,0 +1,29 @@
+.checkout {
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+	padding: 2rem;
+
+	&-billing {
+		grid-column: 1 / 2;
+	}
+
+	&-summary {
+		
+	}
+
+	&-body {
+
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-around;
+		background-color: white;
+		padding: 3rem 4rem;
+
+		font-size: 5rem;
+		font-family: 'rancho';
+		font-weight: bolder;
+	}
+}

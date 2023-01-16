@@ -30,7 +30,6 @@ const Products = () => {
 					description={"Extended family? you'll be spoit for choice"}
 				/>
 			</div>
-			<h2> Can't find what you're looking for? get a quote</h2>
 		</div>
 	);
 };
