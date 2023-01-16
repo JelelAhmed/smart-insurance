@@ -5,11 +5,11 @@ import './btn-inline.styles.scss';
 
 const BtnInline = () => {
 	return (
-	<Link className="btn" to='service'>
+		<div className="btn">
 			<button className='btn-inline'>Learn more<span>&rarr;</span></button>
-	</Link>
-
+		</div>
 	)
 };
 
 export default BtnInline;
+

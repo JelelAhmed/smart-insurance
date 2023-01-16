@@ -5,6 +5,7 @@ import './home.styles.scss';
 
 
 import familyIcon from '../../assets/images/insured-family.jpg'
+import { Link } from "react-router-dom";
 
 const Home = () => {
 	return (
@@ -16,7 +17,9 @@ const Home = () => {
 
 				  <div className="home-cta">
 						<p>Get protection for the whole family</p>
-						<BtnInline />
+						<Link to='/products'>
+							<BtnInline />
+						</Link>
 					</div>
 				</div>
 				<img className="home-image" src={familyIcon} alt='insured-family'/>
