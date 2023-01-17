@@ -40,7 +40,7 @@ import Button from '../../components/button/button.component';
 			<div>
 					<Button 
 						handleClick = {handleClick}
-						text='Go to Checkout' />
+						text='Pay' />
 			</div>
 		);
   };

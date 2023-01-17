@@ -1,21 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {PaystackGateway} from '../../utils/paystack/paystack.utils';
-
-// import { Paystack } from '../../utils/paystack/paystack.utils';
-
 import Button from '../button/button.component';
 
-import './product-card.styles.scss';
 
+import './plan-card.styles.scss';
 
-
-const ProductCard = ({name, price, description}) => {
-
-	
-	const PaystackCheckout = () => {
-		// Paystack();
-	}
+const PlanCard = ({name, price, description}) => {
 
 	return (
 		<div className="plan-card">
@@ -27,12 +18,12 @@ const ProductCard = ({name, price, description}) => {
 
 			<div className="plan-cta">
 				<div className="plan-description">{description}</div>
-				<div>
-					<PaystackGateway />
-				</div>
+				<Link to={'/checkout'}>
+					<Button text={'Go to Checkout'}/>
+				</Link>
 			</div>
 		</div>
 	);
 };
 
-export default ProductCard;
+export default PlanCard;

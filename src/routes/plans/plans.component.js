@@ -1,9 +1,8 @@
 import React from "react";
 
-import ProductCard from "../../components/product-card/product-card.component";
+import PlanCard from "../../components/product-card/plan-card.component";
 
 import PLAN_DATA from '../../plan-data.json';
-
 import familyIcon from '../../assets/images/insured-family.jpg'
 
 import './plans.styles.scss';
@@ -19,7 +18,7 @@ const Plans = () => {
 			<div className="product-list">
 				{PLAN_DATA.map(({name, id,
 				price, description}) => (
-					<ProductCard 
+					<PlanCard 
 						key={id}
 						name={name}
 						price={price}
