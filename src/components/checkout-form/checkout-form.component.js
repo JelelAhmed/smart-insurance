@@ -1,15 +1,44 @@
 import React from 'react';
-import docImage from '../../assets/images/policy-doc.jpg';
+import { useDispatch } from 'react-redux';
+
+import { setInputEmail, setInputFirstName, setInputLastName, setInputPhoneNumber } from '../../store/form/form.actions';
+
 import { PaystackGateway } from '../../utils/paystack/paystack.utils';
+
+
+import docImage from '../../assets/images/policy-doc.jpg';
 
 
 import './checkout-form.styles.scss';
 
 
-const CheckoutForm = ({setName, amount, setEmail, setPhone}) => {
+
+const CheckoutForm = () => {
+	const	dispatch = useDispatch();
+
+	const	handleEmailChange = (event) => {
+		dispatch(setInputEmail(event.target.value))
+	}
+
+	const	handleLastNameChange = (event) => {
+		dispatch(setInputLastName(event.target.value))
+	}
+
+	const	handleFirstNameChange = (event) => {
+		dispatch(setInputFirstName(event.target.value))
+	}
+
+	const	handlePhoneChange = (event) => {
+		dispatch(setInputPhoneNumber(event.target.value))
+	}
+
+	const handleFormSubmit = (event) => {
+		event.preventDefault();
+	}
+
 	return (
 		<div className="App">
-			<div className="container">
+			<form onSubmit={handleFormSubmit} className="container">
 				<div className="item">
 					<div className="overlay-effect"></div>
 					<img
@@ -25,23 +54,50 @@ const CheckoutForm = ({setName, amount, setEmail, setPhone}) => {
 				<div className="checkout">
 					<div className="checkout-form">
 						<div className="checkout-field">
-							<label>Name</label>
-							<input/>
+							<label>First Name</label>
+							<input 
+								onChange={handleFirstNameChange} 
+								label={'First Name'} 
+								type={'text'} 
+								placeholder={'Type here'} 
+								required	
+							/>
+						</div>
+						<div className="checkout-field">
+							<label>Last Name</label>
+							<input 
+								onChange={handleLastNameChange} 
+								label={'Last Name'} 
+								type={'text'} 
+								placeholder={'Type here'} 
+								required/>
 						</div>
 						<div className="checkout-field">
 							<label>Email</label>
-							<input/>
+							<input 
+								onChange={handleEmailChange} 
+								label={'Last Name'} 
+								type={'email'} 
+								placeholder={'Type here'} 
+								required 
+							 />
 						</div>
 						<div className="checkout-field">
 							<label>Phone</label>
-							<input/>
+							<input
+								onChange={handlePhoneChange} 
+								label={'Phone'} 
+								type={'number'} 
+								placeholder={'Type here'} 
+								required
+							/>
 						</div>
 						<div className="checkout-button">
-							<PaystackGateway />
+							<button>SUbmit</button>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
     </div>
 	)
 };
