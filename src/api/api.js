@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const serverClient = axios.create({
-  baseURL: 'http://localhost:3002',
+  baseURL: 'https://smart-j89z.onrender.com',
 	headers: {
 		'Content-Type': 'application/json',
 		'Authorization': `Bearer ${''}`
