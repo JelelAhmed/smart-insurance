@@ -31,8 +31,6 @@ import Button from '../../components/button/button.component';
 			
 		};
 	
-
-
 		const handleClick = () => {
 			initializePayment(onSuccess, onClose)
 		}
@@ -40,7 +38,7 @@ import Button from '../../components/button/button.component';
 			<div>
 					<Button 
 						handleClick = {handleClick}
-						text='Pay' />
+						text='Pay Now' />
 			</div>
 		);
   };

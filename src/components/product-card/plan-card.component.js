@@ -1,5 +1,8 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { selectPlanToPurchase } from '../../store/plans/plan.selectors';
+import { setPlanToPurchase } from '../../store/plans/plans.actions';
 import {PaystackGateway} from '../../utils/paystack/paystack.utils';
 import Button from '../button/button.component';
 
@@ -7,6 +10,12 @@ import Button from '../button/button.component';
 import './plan-card.styles.scss';
 
 const PlanCard = ({name, price, description}) => {
+
+	const dispatch = useDispatch();
+	const PlanToPurchase = {
+		name,
+		price
+	}
 
 	return (
 		<div className="plan-card">
@@ -18,8 +27,8 @@ const PlanCard = ({name, price, description}) => {
 
 			<div className="plan-cta">
 				<div className="plan-description">{description}</div>
-				<Link to={'/checkout'}>
-					<Button text={'Go to Checkout'}/>
+				<Link onClick={() => dispatch(setPlanToPurchase(PlanToPurchase))}  to={'/checkout'}>
+					<Button text={'Go to Checkout'}/>			
 				</Link>
 			</div>
 		</div>

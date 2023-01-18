@@ -1,20 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { setInputEmail, setInputFirstName, setInputLastName, setInputPhoneNumber } from '../../store/form/form.actions';
 
+import { selectPlanToPurchase } from '../../store/plans/plan.selectors';
+
 import { PaystackGateway } from '../../utils/paystack/paystack.utils';
 
-
 import docImage from '../../assets/images/policy-doc.jpg';
-
-
 import './checkout-form.styles.scss';
 
 
 
 const CheckoutForm = () => {
+
 	const	dispatch = useDispatch();
+	const planToBuy = useSelector(selectPlanToPurchase);
+	const { name, price} = planToBuy;
+	
 
 	const	handleEmailChange = (event) => {
 		dispatch(setInputEmail(event.target.value))
@@ -47,8 +50,8 @@ const CheckoutForm = () => {
 						alt="product"
 					/>
 					<div className="item-details">
-						<p className="item-details__title">{'Plan'}</p>
-						<p className="item-details__amount">NGN{ 20000 / 100}</p>
+						<p className="item-details__title">{name}</p>
+						<p className="item-details__amount">NGN {price}.00</p>
 					</div>
 				</div>
 				<div className="checkout">
@@ -93,7 +96,7 @@ const CheckoutForm = () => {
 							/>
 						</div>
 						<div className="checkout-button">
-							<button>SUbmit</button>
+							<PaystackGateway plan={planToBuy} Bu/>
 						</div>
 					</div>
 				</div>

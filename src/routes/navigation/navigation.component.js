@@ -24,7 +24,7 @@ const Navigation = () => {
 					<Link className="nav-link" to='contact'>
 						<NavItem active text={'Contact'} href={'#contact'} />
 					</Link>
-					<frameElement />
+					<Fragment />
 				</ul>
 			</nav>
 			<Outlet />
