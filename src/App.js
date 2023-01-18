@@ -9,6 +9,7 @@ import Checkout from './routes/checkout/checkout.component';
 
 import './App.scss';
 import Plans from './routes/plans/plans.component';
+import Login from './routes/login/login.component';
 
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
 				<Route path='contact' element={<Contact />} />
 				<Route path='products' element={<Plans />} />
 				<Route path='checkout' element={<Checkout />} />
+				<Route path='login' element={<Login />} />
+
 			</Route>
 		</Routes>
   );

@@ -24,6 +24,9 @@ const Navigation = () => {
 					<Link className="nav-link" to='contact'>
 						<NavItem active text={'Contact'} href={'#contact'} />
 					</Link>
+					<Link className="nav-link" to='/login'>
+						<NavItem active text={'login'} href={'login'} />
+					</Link>
 					<Fragment />
 				</ul>
 			</nav>

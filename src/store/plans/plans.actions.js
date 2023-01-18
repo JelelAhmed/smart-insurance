@@ -10,3 +10,8 @@ export const setPlanToPurchase = (data) => ({
 	payload: data
 });
 
+export const setUserPlans = (data) => ({
+	type: planActionTypes.SET_USER_PLANS,
+	payload: data
+});
+

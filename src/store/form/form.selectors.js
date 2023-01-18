@@ -20,6 +20,10 @@ export const selectLastName = createSelector(
 	(form) => form.lastName
 );
 
+export const selectPhone = createSelector(
+	[selectForm],
+	(form) => form.phone
+);
 
 export const selectPassword = createSelector(
 	[selectForm],

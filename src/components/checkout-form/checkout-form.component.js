@@ -9,13 +9,22 @@ import { PaystackGateway } from '../../utils/paystack/paystack.utils';
 
 import docImage from '../../assets/images/policy-doc.jpg';
 import './checkout-form.styles.scss';
+import Button from '../button/button.component';
+import { selectEmail, selectFirstName, selectLastName } from '../../store/form/form.selectors';
+import { flushSync } from 'react-dom';
 
 
 
 const CheckoutForm = () => {
 
+
 	const	dispatch = useDispatch();
 	const planToBuy = useSelector(selectPlanToPurchase);
+	const firstName = useSelector(selectFirstName);
+	const email = useSelector(selectEmail);
+	const lastName = useSelector(selectLastName);
+
+
 	const { name, price} = planToBuy;
 	
 
@@ -35,6 +44,7 @@ const CheckoutForm = () => {
 		dispatch(setInputPhoneNumber(event.target.value))
 	}
 
+
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
 	}
@@ -49,12 +59,14 @@ const CheckoutForm = () => {
 						src={docImage}
 						alt="product"
 					/>
-					<div className="item-details">
+					<div className="item-details">						
 						<p className="item-details__title">{name}</p>
 						<p className="item-details__amount">NGN {price}.00</p>
 					</div>
 				</div>
 				<div className="checkout">
+				 <h3 className='checkout-cta'>Complete the Form Below</h3>
+
 					<div className="checkout-form">
 						<div className="checkout-field">
 							<label>First Name</label>
@@ -96,7 +108,12 @@ const CheckoutForm = () => {
 							/>
 						</div>
 						<div className="checkout-button">
-							<PaystackGateway plan={planToBuy} Bu/>
+							<PaystackGateway 
+								name={name}
+								price={price}
+								email={email}
+							/>
+							{/* <Button onCLick={() => PaystackGateway()} type={'submit'} text={'Pay'}/> */}
 						</div>
 					</div>
 				</div>

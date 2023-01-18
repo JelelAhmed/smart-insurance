@@ -2,7 +2,8 @@ import planActionTypes from "./plan.types";
 
 const INITIAL_STATE = {
 	plans: [],
-	setPurchase: []
+	setPurchase: [],
+	userPlans: [],
 }
 
 const planReducers = (state = INITIAL_STATE, action) => {
@@ -18,6 +19,13 @@ const planReducers = (state = INITIAL_STATE, action) => {
 				...state,
 				setPurchase: action.payload
 			}
+		
+		case planActionTypes.SET_USER_PLANS: 
+		return {
+			...state,
+			userPlans: action.payload
+		}
+			
 			
 			
 		default:

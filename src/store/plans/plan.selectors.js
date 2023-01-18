@@ -12,3 +12,8 @@ export const selectPlanToPurchase = createSelector(
 	[selectPlan],
 	(plan) => plan.setPurchase
 );
+
+export const selectUserPlans = createSelector(
+	[selectPlan],
+	(plan) => plan.userPlans
+);
