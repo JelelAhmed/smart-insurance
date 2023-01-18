@@ -30,6 +30,7 @@ const SignIn = () => {
 		})
 		.then(response => {
 			dispatch(setUserPlans(response.data));
+			console.log(response);
 		})
 	}
 	return (
